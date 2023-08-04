@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">dinningcallapp_project</string>
+    <string name="baseUrl">http://127.0.0.1:8000/</string>>
+</resources>
