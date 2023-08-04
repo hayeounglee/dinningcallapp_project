@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.Toast
 import android.widget.Toolbar
 import com.example.dinningcallapp_project.databinding.ActivitySign1Binding
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class Sign1: AppCompatActivity() {
 
@@ -30,6 +32,7 @@ class Sign1: AppCompatActivity() {
         val etName: AppCompatEditText = findViewById(R.id.et_id)
 
         binding?.next?.setOnClickListener {
+
             if (etName.text.toString().isEmpty()){
                 Toast.makeText(this,"Please Enter Your Name",Toast.LENGTH_SHORT).show()
             }else{
