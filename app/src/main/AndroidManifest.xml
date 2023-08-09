@@ -24,7 +24,7 @@
             android:name=".Sign2"
             android:exported="false" />
         <activity
-            android:name=".Sign1"
+            android:name=".Sign1Activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

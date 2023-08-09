@@ -33,11 +33,11 @@
         android:text="Log In"
         android:textSize="28sp" />
     <Button
-        android:id="@+id/sign"
+        android:id="@+id/Sign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Sign"
+        android:text="Sign up"
         android:textSize="28sp"
         android:background="@drawable/button_round" />
 

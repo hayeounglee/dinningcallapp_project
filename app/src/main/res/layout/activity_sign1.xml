@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sign1"
+    tools:context=".Sign1Activity"
     android:padding="40dp"
     android:background="@drawable/background_drawing_view_layout"
     android:gravity="center_horizontal"
@@ -40,11 +40,11 @@
         >
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/et_id"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="id"
-            android:inputType="textCapWords"
+            android:hint="email"
+            android:inputType="textEmailAddress"
             android:textColor="#363A43"
             android:textColorHint="#7A8089"
             tools:ignore="SpeakableTextPresentCheck" />

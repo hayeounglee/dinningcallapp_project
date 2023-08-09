@@ -1,37 +1,36 @@
-package com.example.dinningcallapp_project
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
-import androidx.appcompat.widget.AppCompatEditText
+    package com.example.dinningcallapp_project
 
-import retrofit2.Retrofit
+    import android.content.Intent
+    import android.os.Bundle
+    import android.view.View
+    import androidx.appcompat.app.AppCompatActivity
+    import com.example.dinningcallapp_project.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // added setContentView function
-        setContentView(R.layout.activity_main)
+    class MainActivity : AppCompatActivity() {
 
-        val buttonStart: Button = findViewById(R.id.sign)
+        //view binding step 1)
+        private var binding:ActivityMainBinding? = null
+        override fun onCreate(savedInstanceState: Bundle?) {
 
-        buttonStart.setOnClickListener {
-            // 버튼 클릭하면 로그인 되게!
+            super.onCreate(savedInstanceState)
+
+            //view binding step 2)
+            binding = ActivityMainBinding.inflate(layoutInflater)
+
+            //view binding step 3)
+            // added setContentView function
+            setContentView(binding?.root)
 
 
-            val retrofit= Retrofit.Builder()
-                .baseUrl("@string/baseUrl")
-                .addConverterFactory(GsonConverterFactory.create()) // Json데이터를 사용자가 정의한 Java 객채로 변환해주는 라이브러리
-                .build() //레트로핏 구현체 완성!
 
-            val loginService=retrofit.create(LoginService::class.java) //retrofit객체 만듦!
-            loginService.login(LoginObject(1, password = "aaaa"))
-
-            val intent = Intent(this,Sign1::class.java)
-            startActivity(intent)
         }
 
-
+        fun onClick(v: View) {
+            when (v.id) {
+                binding?.Sign?.id -> {
+                    val intent = Intent(this, Sign1Activity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
     }
-}
